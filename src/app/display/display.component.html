@@ -1,0 +1,95 @@
+<div class="slider-class">
+  <h2>Table Example - User List</h2>
+  <!-- <p>{{ this.users | json }}</p> -->
+  <p-table
+    [value]="users"
+    [paginator]="true"
+    [rows]="5"
+    [showCurrentPageReport]="true"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    [rowsPerPageOptions]="[5, 10, 15]"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th pSortableColumn="name">
+          Name<p-sortIcon field="Name"></p-sortIcon>
+        </th>
+        <th pSortableColumn="age">Age<p-sortIcon field="Age"></p-sortIcon></th>
+        <th>Email_Id</th>
+        <th>Mobile</th>
+        <th>PinCode</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-user>
+      <tr>
+        <td>{{ user.name }}</td>
+        <td>{{ user.age }}</td>
+        <td>{{ user.email_id }}</td>
+        <td>{{ user.mobile }}</td>
+        <td>{{ user.pincode }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+<div class="ui-md-6">
+  <div>
+    <p-dropdown
+      [options]="users"
+      [(ngModel)]="selecteduser"
+      placeholder="Select User"
+      optionLabel="name"
+      optionValue="email_id"
+      [filter]="true"
+    ></p-dropdown>
+    {{ selecteduser | json }}
+  </div>
+  <div class="ui-md-6">
+    <p-multiSelect
+      [options]="users"
+      [(ngModel)]="multiselecteduser"
+      placeholder="MultiSelect User"
+      optionLabel="name"
+      optionValue="age"
+      display="chip"
+    ></p-multiSelect>
+    {{ multiselecteduser | json }}
+  </div>
+</div>
+
+<br />
+
+<br />
+<div>
+  <p-checkbox
+    name="groupname"
+    label="select checkbox"
+    [binary]="true"
+    [(ngModel)]="selectedValues"
+    (onChange)="termsConditions($event)"
+  ></p-checkbox>
+  {{ selectedValues }}
+</div>
+<div>
+  <p-checkbox
+    name="fruit"
+    value="apple"
+    label="Apple"
+    [disabled]="true"
+    [(ngModel)]="Fruits"
+    (onChange)="selectedFruits($event)"
+  ></p-checkbox>
+  <p-checkbox
+    name="fruit"
+    value="banana"
+    label="Banana"
+    [(ngModel)]="Fruits"
+    (onChange)="selectedFruits($event)"
+  ></p-checkbox>
+  <p-checkbox
+    name="fruit"
+    value="orange"
+    label="Orange"
+    [(ngModel)]="Fruits"
+    (onChange)="selectedFruits($event)"
+  ></p-checkbox>
+</div>

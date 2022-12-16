@@ -1,0 +1,53 @@
+{
+  "user-data": [
+    {
+      "name": "Dhanvantri",
+      "age": "1",
+      "email_id": "dhan@gmail.com",
+      "mobile": "9999999999",
+      "pincode": "412102"
+    },
+    {
+      "name": "Mitali",
+      "age": "34",
+      "email_id": "Mitali@gmail.com",
+      "mobile": "9999999999",
+      "pincode": "412102"
+    },
+    {
+      "name": "Madhuri",
+      "age": "49",
+      "email_id": "Madhuri@gmail.com",
+      "mobile": "9999999999",
+      "pincode": "412102"
+    },
+    {
+      "name": "Rutuja",
+      "age": "18",
+      "email_id": "Rutuja@gmail.com",
+      "mobile": "9999999999",
+      "pincode": "412102"
+    },
+    {
+      "name": "Manu",
+      "age": "28",
+      "email_id": "Manu@gmail.com",
+      "mobile": "9999999999",
+      "pincode": "412102"
+    },
+    {
+      "name": "Minakshi",
+      "age": "21",
+      "email_id": "Minakshi@gmail.com",
+      "mobile": "9999999999",
+      "pincode": "412102"
+    },
+    {
+      "name": "Eshita",
+      "age": "12",
+      "email_id": "dhan@gmail.com",
+      "mobile": "9999999999",
+      "pincode": "412102"
+    }
+  ]
+}

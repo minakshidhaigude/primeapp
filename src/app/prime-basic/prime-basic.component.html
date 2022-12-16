@@ -1,0 +1,87 @@
+<p-calendar
+  [(ngModel)]="dob"
+  dateFormat="dd/mm/yy"
+  [minDate]="minDateValue"
+  [maxDate]="maxDateValue"
+  [readonlyInput]="true"
+  [showTime]="true"
+  hourFormat="12"
+></p-calendar
+><br /><br />
+<p-calendar
+  [(ngModel)]="dob"
+  dateFormat="dd/mm/yy"
+  [disabledDays]="[1, 5]"
+  [readonlyInput]="true"
+  [disabledDates]="invalidDates"
+></p-calendar>
+<br /><br />
+<p-calendar
+  [(ngModel)]="datevalue"
+  selectionMode="range"
+  (onSelect)="selectDateRange($event)"
+  dataType="string"
+></p-calendar>
+<br /><br />
+<label for="firstName" class="block">FirstName</label>
+<input
+  type="text"
+  pInputText
+  [(ngModel)]="firstName"
+  id="firstName"
+  #fname="ngModel"
+  required
+/>
+<small class="block p-error" *ngIf="fname.invalid && fname.dirty"
+  >First Name is required</small
+>
+<span class="block">{{ firstName }}</span>
+<br /><br />
+<span class="p-float-label">
+  <input
+    id="float-input"
+    type="text"
+    pInputText
+    [(ngModel)]="firstName"
+    #fname="ngModel"
+    required
+  />
+  <label for="float-input">FirstName</label>
+</span>
+<hr />
+<p-toast position="bottom-right" key="btmright"></p-toast>
+
+<button pButton (click)="showToast()" label="show toast"></button>
+<hr />
+<p-toast position="center" key="c" (onClose)="onReject()" [baseZIndex]="5000">
+  <ng-template let-message pTemplate="message">
+    <div class="flex flex-column" style="flex: 1">
+      <div class="text-center">
+        <i class="pi pi-exclamation-triangle" style="font-size: 3rem"></i>
+        <h4>{{ message.summary }}</h4>
+        <p>{{ message.detail }}</p>
+      </div>
+      <div class="grid p-fluid">
+        <div class="col-3">
+          <button
+            type="button"
+            pButton
+            (click)="onConfirm()"
+            label="Yes"
+            class="p-button-success"
+          ></button>
+        </div>
+        <div class="col-3">
+          <button
+            type="button"
+            pButton
+            (click)="onReject()"
+            label="No"
+            class="p-button-secondary"
+          ></button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</p-toast>
+<button pButton (click)="showConfirmed()" label="show confirmed"></button>
